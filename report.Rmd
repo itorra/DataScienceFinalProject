@@ -9,22 +9,33 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+## Introduction
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+Phish is an American rock and roll band noted for their musical improvisation, extended jams, blending of musical genres, and dedicated fan base. The Band Formed at the University of Vermont in 1983 (with the current line-up solidifying in 1985).
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+The Mockingbird Foundation is a charitable organization founded by fans of the jam band Phish in 1996 to support music education for children. The website Phish.net is a fan website that formally adopted by The Foundation as a project in 2005. The site had begun in 1991 and served Phish fans for nearly two decades as static HTML pages. It was re-launched as an integrated database - of setlists, song histories, reviews, and more - in fall 2009.
 
-```{r cars, message=FALSE, warning=FALSE}
-summary(cars)
+The website contains tables about each song that ever played in show. Every single show the band has been playing during the years has a unique setlist. This information about each song and each show is recorded at the website database for fans. 
+
+Let's get some code - preparations 
+
+
+```{r intro, message=FALSE, warning=FALSE}
+require(gtable)
+require(ggplot2)
+library(gtable)
+library(ggplot2)
 ```
 
-## Including Plots
+We chose to explore the statistics about the songs. I copied the table about all the songs the band played during the years. The table contains the following columns:
 
-You can also embed plots, for example:
+ - Song Name
+ - Original Artist (The band played a lot of cover songs)
+ - Time Played (At how many shows the song has played)
+ - Debut (Show date first time played)
+ - Last Played (Show date last time played)
+ - Gap (Amount of shows the song hasn't played)
 
-```{r pressure, echo=TRUE}
-plot(pressure)
-```
+The last show was played in 2016/10/31
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
