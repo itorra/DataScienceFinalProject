@@ -188,7 +188,7 @@ plot(fluffhead[c("current_gap","years_since_last_played")], col= forbin$cluster,
 ##Deployment
 
 The change
-
+  
 ##Summary
 
 As a fan, I can say the report contributed to me a lot of new information. After years of trying to figure out what makes a song to dissapear from the regular rotation, it seems like I've got few answers. We can saw that clustering the songs to 3 different groups, in coherence to the 3 eras the band was active at.
