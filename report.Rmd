@@ -2,7 +2,7 @@
 title: "Data Science Final Project - Phish"
 author: "Ido Algom & Natalie Gilboa"
 date: "1 December 2016"
-output: word_document
+output: html_document
 ---
 
 ![](shenkar.jpg "logo")
