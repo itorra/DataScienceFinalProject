@@ -187,7 +187,13 @@ plot(fluffhead[c("current_gap","years_since_last_played")], col= forbin$cluster,
 
 ##Deployment
 
+The
+
 ##Summary
+
+As a fan, I can say the report contributed to me a lot of new information. After years of trying to figure out what makes a song to dissapear from the regular rotation, it seems like I've got few answers. We can saw that clustering the songs to 3 different groups, in coherence to the 3 eras the band was active at.
+
+We saw that 2.0 and the end of 1.0 were grouped together with 3.0. If we'll try to explore the music, the length of the jams and type of songs pickups we'll see that the grouping we got from the k-means algorithm is pretty accurate. In 1997 Phish played one of it's greatest tours, fall tour 97 AKA "Phsih Destroys America" was a turn point in music of Phish while playing live. Jams were started to get little shorter what makees more songs during 3 hours regular show. During the end of the 90's  
 
 ##Bibliography
 
