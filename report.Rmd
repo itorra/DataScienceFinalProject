@@ -1,7 +1,7 @@
 ---
 title: "Data Science Final Project - Phish"
 author: "Ido Algom & Natalie Gilboa"
-date: "1 December 2016"
+date: "10 March 2017"
 output: html_document
 ---
 
@@ -15,13 +15,13 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Phish is an American rock and roll band noted for their musical improvisation, extended jams, blending of musical genres, and dedicated fan base. The Band Formed at the University of Vermont in 1983 (with the current line-up solidifying in 1985).
 
-In the following report we'll show the spreads of songs the bandhas played over 33 years. We'll see that there is consistensy about songs pick-ups. and most of the songs are played for few years and then syat behind. 
+In the following report we'll show the spreads of songs the band has played over 33 years. We'll see that there is consistency about songs pick-ups. and most of the songs are played for few years and then stay behind. 
 
 Before reading the report it's important to mention a few facts about Phish shows:
-1. A show never repeted itself more than once - Each show offers completely different setlist from another. 
-2. When the band hits a town it can be for 1 to 4 nights in a row. When it's 2 it's called "a Run". Inadditionto fact number 1 it's important to mention that a song will never repeat itself more than once in. But important to mention that in rare shows a song can repeat itself more than once at the same show. (sandwich song)
+1. A show never repeated itself more than once - Each show offers completely different setlist from another. 
+2. When the band hits a town it can be for 1 to 4 nights in a row. When it's 2 it's called "a Run". Additional fact number 1 it's important to mention that a song will never repeat itself more than once in. But important to mention that in rare shows a song can repeat itself more than once at the same show. (sandwich song)
 
-In the report we'll use song appearances counts and debut years to see how creative the band is. We'll use k-meand to cluster the songs. The reason we chose 3 clusters is that it's the same amount of eras. (description below)
+In the report we'll use song appearances counts and debut years to see how creative the band is. We'll use k-means to cluster the songs. The reason we chose 3 clusters is that it's the same amount of eras. (description below)
 
 ## Business Understanding
 
@@ -29,14 +29,14 @@ The Mockingbird Foundation is a charitable organization founded by fans of the j
 
 The website contains tables about each song that ever played in show. Every single show the band has been playing during the years has a unique setlist. This information about each song and each show is recorded at the website database for fans. 
 
-The report's targets are made for statisitcs only. As mentioned, The Mockingbird Foundation is a charitable organization and the band Phish is not related in any way to the orginization exept in it's careness and appriciation to thier fan base. 
+The report's targets are made for statistics only. As mentioned, The Mockingbird Foundation is a charitable organization and the band Phish is not related in any way to the organization except in it's appreciation to their fan base. 
 
 ## Dictinary
 
 Hiatus - a temporal break-up.
-Phiah went on hiatus 2 times.
+Phish went on hiatus 2 times.
 The first time was on 2001. All the era between 1983 to 2001 is called 1.0
-They cameback toghether about a year later in 2002 untill the summer of 2004. This era is called 2.0 and they cameback again to studio and stages in the spring of 2009 untill today. this era is 3.0.
+They comeback together about a year later in 2002 until the summer of 2004. This era is called 2.0 and they comeback again to studio and stages in the spring of 2009 until today. this era is 3.0.
 More words are described in Data understanding.
 
 
@@ -87,9 +87,9 @@ barplot(table(weekdays(as.Date(yem$Debut))))
 
 ### Songs Left Behind
 
-In this Scatterplot we extracted the year from every song, when debuted and last played. The color shows if more songs this year was a cover or original. As stronger the color is, more frequent the group repeats in that point. 
+In this Scatter plot we extracted the year from every song, when debuted and last played. The color shows if more songs this year was a cover or original. As stronger the color is, more frequent the group repeats in that point. 
 From this graph we learn that a lot of covers are not repeating themselves. The band play it during it's debut year and than leave it behind.
-Another thing we can learn is that most of the original songs are not left behind. There're some songs that did left in the past before 1990, but the rest are keeping pooping out at shows.
+Another thing we can learn is that most of the original songs are not left behind. There some songs that did left in the past before 1990, but the rest are keeping pooping out at shows.
 
 Some preparations
 ```{r prep2}
@@ -157,18 +157,18 @@ table(forbin$cluster, fluffhead$is_original)
 
 ##Evaluation
 
-The first evaluation we'll do is to see clustering the songs by amount of years since debuted and amaount of years since last played. 
+The first evaluation we'll do is to see clustering the songs by amount of years since debuted and amount of years since last played. 
 
 ```{r}
 plot(fluffhead[c("years_since_last_played","years_since_debuted")], col= forbin$cluster, pch=ifelse(fluffhead$is_original=="Original",4,5))
 points(forbin$centers[,c("years_since_last_played","years_since_debuted")], col=3:5,pch=8,cex=2)
 ```
 
-During the firsts years, the band didn't have many originals songs. Actually the first studio album wentout on 1989. What means that for 6 years most of the songs the band has played are covers. We can see it in the plot where x stands for original song the diamond stands for cover. 
-At the top rows we can see that ther're a lot of covers and only one cover which is debuted in that era is still getting played (top left diamond). On the other hand we can see that most of the songs debuted and oftenly played during the last years are originals. and as the years going forward ther'e are less covers.
-A single Ineresting poing in the plot showing a year between 15 to 20 on the x axis where the band left there a lot of covers she played years befire. 
+During the firsts years, the band didn't have many originals songs. Actually the first studio album went out on 1989. What means that for 6 years most of the songs the band has played are covers. We can see it in the plot where x stands for original song the diamond stands for cover. 
+At the top rows we can see that there a lot of covers and only one cover which is debuted in that era is still getting played (top left diamond). On the other hand we can see that most of the songs debuted and often played during the last years are originals. and as the years going forward there are less covers.
+A single Interesting point in the plot showing a year between 15 to 20 on the x axis where the band left there a lot of covers she played years before. 
 
-The clustering itself is little suprising. We can see that the black cluster where alot of songs abonded at the early era of 1.0 and another center is around 1996. It's important to mention that only in 1994 the band played over 250 shows, a fact the explains the green cluster centrum. During that a year there was a big variety of songs.
+The clustering itself is little surprising. We can see that the black cluster where lot of songs abandoned at the early era of 1.0 and another center is around 1996. It's important to mention that only in 1994 the band played over 250 shows, a fact the explains the green cluster center. During that a year there was a big variety of songs.
 
 
 ```{r}
@@ -187,19 +187,21 @@ plot(fluffhead[c("current_gap","years_since_last_played")], col= forbin$cluster,
 
 ##Deployment
 
-The change
-  
+As mentioned, this project is not about a business. The information we gained from this research may be another way of looking into the way the greatest rock band of all times has chose what to play in their live shows. Thus, the deployment section is not relevant for this report. 
+
 ##Summary
 
-As a fan, I can say the report contributed to me a lot of new information. After years of trying to figure out what makes a song to dissapear from the regular rotation, it seems like I've got few answers. We can saw that clustering the songs to 3 different groups, in coherence to the 3 eras the band was active at.
+As a fan, I can say the report contributed to me a lot of new information. After years of trying to figure out what makes a song to disappear from the regular rotation, it seems like I've got few answers. We  saw that clustering the songs to 3 different groups, in coherence to the 3 eras the band was active at, was pretty much what we expected. The releasing frequent of new studio albums in the 90's was much higher than 2.0 and 3.0, which means more new songs to rotation. Those songs remain classics and still on the regular rotation. We saw that 2.0 and the end of 1.0 were grouped together with 3.0. If we'll try to explore the music, the length of the jams and type of songs pickups we'll see that the grouping we got from the k-means algorithm is pretty accurate. In 1997 Phish played one of it's greatest tours, fall tour 97 AKA "Phsih Destroys America" was a turn point in music of Phish while playing live. Jams were started to get little shorter  what makes more songs during 3 hours regular show. 
 
-We saw that 2.0 and the end of 1.0 were grouped together with 3.0. If we'll try to explore the music, the length of the jams and type of songs pickups we'll see that the grouping we got from the k-means algorithm is pretty accurate. In 1997 Phish played one of it's greatest tours, fall tour 97 AKA "Phsih Destroys America" was a turn point in music of Phish while playing live. Jams were started to get little shorter what makees more songs during 3 hours regular show. 
+ In the future, if one would like to extend this research it's possible to insert some jams from various years into signal analyzer (using [psishtrack.com api](http://phishtracks.com)) and take out statistics of the jamming style and see how a jamming style of a song has changed during the years since it's debut to it's last performance.
+
+Thanks to the dedicated fanbase of Phish the web is full of  information about almost all the shows the band has ever played. The tapers policy contributed in so many ways. Today, out of 2100 shows, more than 2000 are available to immediate streaming for free online. There accurate setlist of each show ( a numerous shows are missing from the early 80s) and the way machine learning, data science and deep learning can take place with all that information is more than interesting for future researches.     
 
 ##Bibliography
 
 - The database - [Phish.net](http://phish.net/song)
 - [Wikipedia](https://en.wikipedia.org/wiki/Phish)
-- My knowledge and dozens of shows attendences.
+- My knowledge and dozens of shows attendances.
 
 
 
