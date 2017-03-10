@@ -185,7 +185,7 @@ plot(fluffhead[c("current_gap","years_since_last_played")], col= forbin$cluster,
 
 ##Deployment
 
-As mentioned, this project is not about a business. The information we gained from this research may be another way of looking into the way the greatest rock band of all times has chose what to play in their live shows. Thus, the deployment section is not relevant for this report. 
+As mentioned, this project is not about a business. The information we gained from this research may be another way of looking into the way the greatest rock band of all times has chose what to play in their live shows. Thus, the deployment section is not relevant for this report.
 
 ##Summary
 
